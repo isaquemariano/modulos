@@ -1,0 +1,32 @@
+def aumentar(preço, taxa):
+    res = preço + (preço * taxa/100)
+    return res
+
+
+def diminuir(preço, taxa):
+    res = preço - (preço * taxa/100)
+    return res
+
+
+def dobro(preço):
+    res = preço * 2
+    return res
+
+
+def metade(preço):
+    res = preço / 2
+    return res
+
+def moeda(preço=0, moeda='R$'):
+    return f'{moeda}{preço}'.replace('.', ',')
+
+
+programa play
+import moeda
+
+
+p = float(input('digite o preço: R$ '))
+print(f'A metade do preço {p} é {moeda.metade(p)}')
+print(f'O dobro de {p} é {moeda.dobro(p)}')
+print(f'Aumentando 10%, temos R${moeda.aumentar(p, 10)}')
+print(f'com desconto de 10%, temos R${moeda.diminuir(p, 10)}')
